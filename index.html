@@ -1,1 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaywo | Profile</title>
+    <!-- Thêm FontAwesome để hiển thị icon Twitch -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0b1329;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 0;
+        }
+        .profile-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #0b1329;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* Banner GIF ở trên */
+        .banner {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        /* Khung chứa Avatar đè lên banner */
+        .avatar-container {
+            position: relative;
+            margin-top: -60px;
+            margin-bottom: 12px;
+        }
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 4px solid #0b1329;
+            object-fit: cover;
+            background-color: #1e293b;
+        }
+        /* Tên và Location */
+        .name {
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+        .location {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        /* Icon mạng xã hội */
+        .social-icons {
+            margin-bottom: 24px;
+        }
+        .social-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #131c38;
+            color: #ffffff;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: 0.2s;
+            border: 1px solid #1e293b;
+        }
+        .social-icon:hover {
+            background-color: #1e293b;
+            color: #9146FF; /* Màu thương hiệu Twitch */
+        }
+        /* Khung Ranks */
+        .ranks-box {
+            width: 90%;
+            background-color: #111a36;
+            border: 1px solid #1e2c56;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .ranks-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            color: #e2e8f0;
+        }
+        .ranks-grid {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .rank-card {
+            background-color: #162247;
+            border: 1px solid #24356e;
+            border-radius: 12px;
+            padding: 16px;
+            flex: 1;
+            min-width: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .game-info {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+        }
+        .rank-badge {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+        .rank-name {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #f1f5f9;
+        }
+    </style>
+</head>
+<body>
 
+    <div class="profile-container">
+        <!-- Banner GIF: Thay link ảnh/gif banner của bạn vào src -->
+        <img src="https://images.steamusercontent.com/ugc/832451442666051875/A7A5DA84E434D11499AAB35119C25A268D160D0C/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" alt="Banner" class="banner">
+
+        <!-- Avatar: Thay link ảnh avatar của bạn vào src -->
+        <div class="avatar-container">
+            <img src="https://kommodo.ai/i/pj1OXd1iGXSH319shtXU" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="name">ZAYWO</div>
+        
+        <div class="location">
+            <span>🇻🇳</span> Vietnam
+        </div>
+
+        <!-- Mạng xã hội -->
+        <div class="social-icons">
+            <!-- Thay link Twitch của bạn vào href -->
+            <a href="https://twitch.tv/yourusername" target="_blank" class="social-icon">
+                <i class="fa-brands fa-twitch"></i>
+            </a>
+        </div>
+
+        <!-- Khung Ranks -->
+        <div class="ranks-box">
+            <div class="ranks-title">RANKS</div>
+            <div class="ranks-grid">
+                
+                <!-- Valorant Rank -->
+                <div class="rank-card">
+                    <div class="game-info">
+                        <i class="fa-solid fa-shield-halved" style="color: #ff4655;"></i> VALORANT
+                    </div>
+                    <!-- Bạn có thể thay link ảnh huy hiệu rank Valorant Ascendant 3 vào src -->
+                    <img src="https://trackercdn.com/cdn/val/ranks/ascendant3.png" alt="Ascendant 3" class="rank-badge">
+                    <div class="rank-name">ASCENDANT 3</div>
+                </div>
+
+                <!-- CS2 Rank -->
+                <div class="rank-card">
+                    <div class="game-info">
+                        <i class="fa-solid fa-crosshairs" style="color: #f97316;"></i> Counter-Strike 2
+                    </div>
+                    <!-- Bạn có thể thay link icon Faceit level 9 vào src -->
+                    <img src="https://assets.faceit-cdn.net/third_party/game_assets/cs2/skill_levels/9.svg" alt="LV 9 Faceit" class="rank-badge">
+                    <div class="rank-name">LV 9 FACEIT</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
