@@ -21,19 +21,39 @@
       align-items: center;
       min-height: 100vh;
       padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* 1. Lấy Banner làm background blur toàn trang */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
+      background-image: url('https://images.steamusercontent.com/ugc/832451442666051875/A7A5DA84E434D11499AAB35119C25A268D160D0C/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false');
+      background-size: cover;
+      background-position: center;
+      filter: blur(25px) brightness(0.35);
+      z-index: -1;
     }
 
     .bio-card {
       width: 100%;
       max-width: 420px;
-      background: #161b22;
-      border: 1px solid #30363d;
+      background: rgba(22, 27, 34, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      text-align: center;
     }
 
-    /* 1. BANNER SECTION */
+    /* 2. BANNER SECTION */
     .banner-container {
       width: 100%;
       height: 150px;
@@ -47,11 +67,11 @@
       object-fit: cover;
     }
 
-    /* 2. AVATAR & SOCIAL ICONS SECTION */
+    /* 3. AVATAR & SOCIAL ICONS SECTION */
     .profile-header {
       position: relative;
       padding: 0 20px;
-      height: 60px;
+      height: 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -60,7 +80,7 @@
     .social-buttons {
       display: flex;
       gap: 12px;
-      margin-top: -20px;
+      margin-top: -10px;
     }
 
     .icon-btn {
@@ -77,7 +97,6 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
-    /* Nút đỏ YouTube */
     .icon-btn.youtube { 
       background: #FF0000; 
       border: 1px solid #FF3333;
@@ -87,7 +106,6 @@
       box-shadow: 0 0 12px rgba(255, 0, 0, 0.6); 
     }
 
-    /* Nút tím Twitch */
     .icon-btn.twitch { 
       background: #9146FF; 
       border: 1px solid #A970FF;
@@ -112,294 +130,39 @@
       background: #21262d;
     }
 
-    /* 3. MUSIC BAR SECTION */
-    .music-bar-container {
+    /* 4. TÊN ZAYWO HIỆU ỨNG NEON XANH NƯỚC BIỂN */
+    .profile-name-container {
+      margin-top: 25px;
       padding: 0 20px;
-      margin-top: 15px;
     }
 
-    .music-bar {
-      background: #21262d;
-      border: 1px solid #30363d;
-      border-radius: 10px;
-      padding: 10px 14px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .music-icon {
-      color: #1DB954;
-      font-size: 18px;
-    }
-
-    .music-info {
-      flex: 1;
-      font-size: 13px;
-      color: #c9d1d9;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .play-btn {
-      background: none;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    /* 4. RANK SECTION */
-    .ranks-container {
-      margin: 15px 20px 20px;
-      padding: 15px;
-      background: #0d1117;
-      border: 1px solid #30363d;
-      border-radius: 12px;
-    }
-
-    .ranks-title {
-      font-size: 12px;
-      font-weight: 700;
-      color: #8b949e;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-      text-align: center;
-    }
-
-    .ranks-grid {
-      display: flex;
-      gap: 12px;
-    }
-
-    .rank-card {
-      flex: 1;
-      background: #161b22;
-      border: 1px solid #21262d;
-      border-radius: 10px;
-      padding: 12px 8px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .rank-card img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-    }
-
-    .rank-name {
-      font-size: 11px;
-      color: #8b949e;
-      font-weight: 600;
-    }
-
-    .rank-value {
-      font-size: 12px;
-      font-weight: 700;
-      color: #f0f6fc;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="bio-card">
-    
-    <!-- 1. GIF Banner -->
-    <div class="banner-container">
-      <img src="https://images.steamusercontent.com/ugc/832451442666051875/A7A5DA84E434D11499AAB35119C25A268D160D0C/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" alt="Banner" class="banner-img">
-    </div>
-
-    <!-- 2. Avatar & Social Buttons -->
-    <div class="profile-header">
-      <div class="social-buttons">
-        <a href="https://youtube.com" target="_blank" class="icon-btn youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://twitch.tv" target="_blank" class="icon-btn twitch" title="Twitch"><i class="fab fa-twitch"></i></a>
-      </div>
-      <div class="avatar-wrapper">
-        <img src="https://imglink.cc/cdn/l-eGukkW5c.jpg" alt="Avatar" class="avatar-img">
-      </div>
-    </div>
-
-    <!-- 3. Music Bar -->
-    <div class="music-bar-container">
-      <div class="music-bar">
-        <i class="fas fa-music music-icon"></i>
-        <div class="music-info">Zaywo's Vibe</div>
-        <button class="play-btn" onclick="toggleMusic()"><i class="fas fa-play" id="playIcon"></i></button>
-      </div>
-    </div>
-
-    <!-- 4. Ranks Container -->
-    <div class="ranks-container">
-      <div class="ranks-title">RANKS</div>
-      <div class="ranks-grid">
-        
-        <!-- Valorant Card -->
-        <div class="rank-card">
-          <div class="rank-name">VALORANT</div>
-          <img src="https://imglink.cc/cdn/o5OIykcarO.png" alt="Ascendant 3">
-          <div class="rank-value">ASCENDANT 3</div>
-        </div>
-
-        <!-- CS2 Faceit Card -->
-        <div class="rank-card">
-          <div class="rank-name">CS2</div>
-          <img src="https://imglink.cc/cdn/lu3Fg2O2IR.png" alt="Faceit Level">
-          <div class="rank-value">FACEIT</div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Thẻ audio chứa link nhạc catbox của bạn -->
-  <audio id="bgMusic" src="https://files.catbox.moe/20rzwb.mp3" loop></audio>
-
-  <script>
-    function toggleMusic() {
-      const music = document.getElementById('bgMusic');
-      const icon = document.getElementById('playIcon');
-      if (music.paused) {
-        music.play();
-        icon.className = 'fas fa-pause';
-      } else {
-        music.pause();
-        icon.className = 'fas fa-play';
-      }
-    }
-  </script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZAYWO | Bio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: #0d1117;
+    .profile-name {
+      font-size: 26px;
+      font-weight: 800;
       color: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 0 5px #00f0ff, 
+                   0 0 10px #00f0ff, 
+                   0 0 20px #0077ff, 
+                   0 0 40px #0077ff;
     }
 
-    .bio-card {
-      width: 100%;
-      max-width: 420px;
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    .profile-sub {
+      font-size: 13px;
+      color: #8b949e;
+      margin-top: 4px;
     }
 
-    /* 1. BANNER SECTION */
-    .banner-container {
-      width: 100%;
-      height: 150px;
-      position: relative;
-      background: #21262d;
-    }
-
-    .banner-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* 2. AVATAR & SOCIAL ICONS SECTION */
-    .profile-header {
-      position: relative;
-      padding: 0 20px;
-      height: 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .social-buttons {
-      display: flex;
-      gap: 12px;
-      margin-top: -20px;
-    }
-
-    .icon-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Nút đỏ YouTube */
-    .icon-btn.youtube { 
-      background: #FF0000; 
-      border: 1px solid #FF3333;
-    }
-    .icon-btn.youtube:hover { 
-      transform: scale(1.1); 
-      box-shadow: 0 0 12px rgba(255, 0, 0, 0.6); 
-    }
-
-    /* Nút tím Twitch */
-    .icon-btn.twitch { 
-      background: #9146FF; 
-      border: 1px solid #A970FF;
-    }
-    .icon-btn.twitch:hover { 
-      transform: scale(1.1); 
-      box-shadow: 0 0 12px rgba(145, 70, 255, 0.6); 
-    }
-
-    .avatar-wrapper {
-      position: absolute;
-      right: 25px;
-      top: -50px;
-    }
-
-    .avatar-img {
-      width: 95px;
-      height: 95px;
-      border-radius: 50%;
-      border: 4px solid #161b22;
-      object-fit: cover;
-      background: #21262d;
-    }
-
-    /* 3. MUSIC BAR SECTION */
+    /* 5. MUSIC BAR SECTION */
     .music-bar-container {
       padding: 0 20px;
       margin-top: 15px;
     }
 
     .music-bar {
-      background: #21262d;
-      border: 1px solid #30363d;
+      background: rgba(33, 38, 45, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 10px;
       padding: 10px 14px;
       display: flex;
@@ -419,6 +182,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      text-align: left;
     }
 
     .play-btn {
@@ -429,12 +193,12 @@
       font-size: 16px;
     }
 
-    /* 4. RANK SECTION */
+    /* 6. RANK SECTION */
     .ranks-container {
       margin: 15px 20px 20px;
       padding: 15px;
-      background: #0d1117;
-      border: 1px solid #30363d;
+      background: rgba(13, 17, 23, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 12px;
     }
 
@@ -455,8 +219,8 @@
 
     .rank-card {
       flex: 1;
-      background: #161b22;
-      border: 1px solid #21262d;
+      background: rgba(22, 27, 34, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 10px;
       padding: 12px 8px;
       text-align: center;
@@ -505,7 +269,13 @@
       </div>
     </div>
 
-    <!-- 3. Music Bar -->
+    <!-- 3. Tên Zaywo (Neon Xanh Nước Biển) & Main Yoru -->
+    <div class="profile-name-container">
+      <div class="profile-name">ZAYWO</div>
+      <div class="profile-sub">Main Yoru 🌌</div>
+    </div>
+
+    <!-- 4. Music Bar -->
     <div class="music-bar-container">
       <div class="music-bar">
         <i class="fas fa-music music-icon"></i>
@@ -514,7 +284,7 @@
       </div>
     </div>
 
-    <!-- 4. Ranks Container -->
+    <!-- 5. Ranks Container -->
     <div class="ranks-container">
       <div class="ranks-title">RANKS</div>
       <div class="ranks-grid">
@@ -538,7 +308,6 @@
 
   </div>
 
-  <!-- Thẻ audio chứa link nhạc catbox của bạn -->
   <audio id="bgMusic" src="https://files.catbox.moe/20rzwb.mp3" loop></audio>
 
   <script>
